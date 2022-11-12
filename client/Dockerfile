@@ -3,6 +3,17 @@
 # base image
 FROM node:16.14.2-alpine as build
 
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    nodejs \
+    npm
+
 # set working directory
 WORKDIR /app
 
