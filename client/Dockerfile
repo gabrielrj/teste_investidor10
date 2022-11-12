@@ -1,7 +1,7 @@
 ## build environment
 
 # base image
-FROM node:16.14.2 as build
+FROM node:16.14.2-alpine as build
 
 # set working directory
 WORKDIR /app
@@ -11,8 +11,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /app/package.json
-RUN npm install
 RUN npm install @vue/cli@latest -g
+RUN npm install
 
 COPY . /app
 
