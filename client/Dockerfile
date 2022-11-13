@@ -1,7 +1,7 @@
 ## build environment
 
 # base image
-FROM node:16.14.2-alpine
+FROM node:16.14.2-alpine as build
 
 # set working directory
 WORKDIR /app
