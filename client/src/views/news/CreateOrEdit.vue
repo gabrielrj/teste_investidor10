@@ -23,7 +23,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
-              {{ form.code == null ? 'Cadastre uma nova notícia' : `Alteração da notícia ${form.name}` }}</h5>
+              {{ form.code == null ? 'Cadastre uma nova notícia' : `Alteração da notícia` }}</h5>
 
             <div class="row">
               <div class="col">
@@ -171,6 +171,8 @@ export default {
 
   mounted() {
     this.getCategoriesToSelect()
+
+    console.log('Params', this.$route.params)
 
     // eslint-disable-next-line no-prototype-builtins
     if (this.$route.params.hasOwnProperty('newsEditId'))
