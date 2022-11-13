@@ -52,8 +52,6 @@ export default {
 
             await authManager.login(payload)
             .then(response => {
-              console.log(response)
-
                 Cookies.set(process.env.VUE_APP_COOKIE_NAME, response.data.data.access_token)
                 Cookies.set(process.env.VUE_APP_COOKIE_EXPIRE_NAME, response.data.data.expires_in)
 
@@ -61,10 +59,6 @@ export default {
 
                 router.push('/dashboard')
             }).catch(error => {
-                console.log('entrou no catch')
-
-                  console.log(error.response)
-
                 const response = error.response.data
 
                 // eslint-disable-next-line no-prototype-builtins
