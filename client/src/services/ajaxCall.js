@@ -3,6 +3,7 @@ import axios from "axios";
 import NProgress from "nprogress/nprogress.js";
 import 'nprogress/nprogress.css';
 import router from "@/router";
+import Swal from "sweetalert2";
 
 export default {
       // eslint-disable-next-line no-unused-vars
@@ -50,9 +51,10 @@ export default {
                   },
                   data: payload !== null ? JSON.stringify(payload) : null,
             }).catch(error => {
-                  if(error.response.status === 401)
+                  if(error.response.status === 401) {
+                        Swal.fire('Invalid action', 'User not authorized!', 'error');
                         router.push('login')
-                  else
+                  } else
                         throw error;
             });
       }
