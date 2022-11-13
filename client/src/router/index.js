@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Dashboard from "@/views/Dashboard.vue";
@@ -43,14 +43,14 @@ const routes = [
   },
 
   {
-    path: '/news/edit/{id}',
+    path: '/news/edit/:id',
     name: 'NewsEdit',
     component: CreateOrUpdateNews
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
