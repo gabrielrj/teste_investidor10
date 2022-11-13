@@ -175,8 +175,8 @@ export default {
     console.log('Params', this.$route.params)
 
     // eslint-disable-next-line no-prototype-builtins
-    if (this.$route.params.hasOwnProperty('newsEditId'))
-      this.findNewsForUpdate(this.$route.params.newsEditId)
+    if (this.$route.params.hasOwnProperty('id'))
+      this.findNewsForUpdate(this.$route.params.id)
   }
 }
 </script>

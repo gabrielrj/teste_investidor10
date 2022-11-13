@@ -6,7 +6,7 @@
       <p class="card-text">{{
           news ? textTruncate(news.body, 250) : null
         }}</p>
-      <router-link :to="{ name: 'NewsEdit', params: { newsEditId: news.code }}" class="card-link">Acessar</router-link>
+      <router-link :to="{ name: 'NewsEdit', params: { 'id': news.code }}" class="card-link">Acessar</router-link>
     </div>
   </div>
 </template>
